@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+    <!--Main content-->
+    <section class="container margin-bottom-50">
+      <div class="services-container-1">
+        <h2 class="services-title">Customer Services</h2>
+        <div class="services-blocks-container">
+          {% for i in custser %}
+          <div class="services-block">
+            <div class="services-header">
+              <i class="fa fa-plus services-icon"></i>
+              <h3 class="services-title-2">{{i.title}}</h3>  
+            </div>          
+            <p class="services-description">{{i.about}}</p>
+          </div>
+          {% endfor %}
+        </div>  
+      </div>    
+      
+      <div class="about-container-2">
+        {% for i in secondcolumn %}
+        <div class="services-container-inner">
+          <h3 class="about-title-2">{{i.title}}</h3>
+          <img src="{{i.image.url}}" alt="Image" class="img-responsive margin-bottom-15">          
+          <p class="about-description">{{i.text}}</p>
+          <a href="#" class="about-link about-link-2">Details</a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!--banner-->
+    </section> <!-- Main content -->
+{% endblock %}

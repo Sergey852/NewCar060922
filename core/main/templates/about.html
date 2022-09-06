@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+ <!--Main content-->
+    <section class="container margin-bottom-50">      
+      <div class="about-container">
+      {% for i in aboutus %}
+        <div class="about-container-left">
+          <img src="{{i.img.url}}" alt="Image" class="img-responsive">
+        </div>
+        <div class="about-container-right">
+          <h2 class="about-title">{{i.title}}</h2>
+          <p class="about-description">{{i.text1}}</p>
+          <p class="about-description">{{i.text2}}</p>
+          <a href="{% url 'about_details' i.id %}""  class="about-link">Details</a>
+        </div>
+      {% endfor %}
+      </div>
+      {% for i in aboutus2 %}
+      <div class="about-container-2">
+        <div class="about-container-inner">
+          <h3 class="about-title-2">{{i.title}}</h3>
+          <img src="{{i.img.url}}" alt="Image" class="img-responsive margin-bottom-15">          
+          <p class="about-description">{{i.text}}</p>
+          <a href="{% url 'about_details2' i.id %}" class="about-link about-link-2">Details</a>
+        </div>
+      {% endfor %}
+      </div>
+
+     
+    </section> <!-- Main content -->
+    <!--Footer content-->
+{% endblock %}

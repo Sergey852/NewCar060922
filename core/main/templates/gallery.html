@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+    <!--Main content-->
+    <section class="container margin-bottom-50">
+      <h4>Models ({{galcount}})</h4>
+      <div class="row">
+        <div class="tm-gallery col-lg-12">
+          {% for i in photo %}
+          <div class="tm-item-container">
+            <h4 class="about-title">{{ i.title }}</h4>
+            <img src="{{i.img.url}}" width="180px"  alt="Image">
+            <div class="tm-item-price-container tm-gallery-item-info">
+              <span class="tm-item-price">{{i.modclass}}</span>
+              <a href="{% url 'Gallery_view_more' i.id %}" class="tm-item-link">
+                <span class="tm-item-action">View More</span>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>        
+      </div>
+
+      <!--banner-->
+    </section> <!-- Main content -->
+{% endblock %}

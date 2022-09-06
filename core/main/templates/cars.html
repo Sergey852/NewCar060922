@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="tm-gallery col-lg-9 col-md-9 col-sm-8 col-xs-12">
+    {% for i in cars %}
+    <h3 class="tm-gallery-title">{{ i.title }}</h3>   
+
+      {% for j in i.carcateg1.all %}      
+     
+    <div class="tm-item-container">
+      <img src="{{j.image.url}}" width="160px" alt="Image">
+      <p class="tm-item-description">{{j.title}}</p><hr>
+      <div class="tm-item-price-container">
+        <span class="tm-item-price">{{j.price}}</span>
+        <a href="#" class="tm-item-link">
+          <span class="tm-item-action">Add to Cart</span>
+          <img src="{{j.imgpng.url}}" class="tm-item-add-icon" alt="Image">
+        </a>
+      </div>
+    </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+{% endblock %}

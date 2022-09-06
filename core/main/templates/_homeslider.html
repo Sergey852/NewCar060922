@@ -1,0 +1,27 @@
+<div class="templatemo-welcome welcome-slider">
+    <div class="container">
+      <div class="row">
+        <div class="flexslider">
+
+          <ul class="slides">
+            {% for i in slider %}
+            <li>
+              <div class="about-slider">
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                  <img src="{{ i.img.url }}" class="img-responsive" alt="Image">
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 about-slider-description">
+                  <h2 class="text-uppercase welcome-title">
+                        <span class="welcome-title-1">{{ i.name1 }}</span>
+                        <span class="welcome-title-2">{{ i.name2 }}</span>
+                  </h2>
+                  <p class="welcome-message">{{ i.about }}</p>
+                </div>              
+              </div>  
+              {% endfor %}
+            </li>
+          </ul>
+        </div>                          
+      </div>    
+    </div>
+  </div>
